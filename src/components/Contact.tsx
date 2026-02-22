@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data';
 import './Contact.css';
 
