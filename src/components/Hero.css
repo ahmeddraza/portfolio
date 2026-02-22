@@ -1,0 +1,118 @@
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 100px; /* Offset for desktop sidebar */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 70% 50%, #0d1a20 0%, #050505 70%);
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 100%);
+}
+
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+}
+
+.c1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-dim);
+  top: 20%;
+  right: 10%;
+  animation: float 10s infinite ease-in-out;
+}
+
+.c2 {
+  width: 300px;
+  height: 300px;
+  background: #004e92;
+  bottom: 10%;
+  right: 30%;
+  animation: float 15s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 30px); }
+}
+
+.hero-content {
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-intro {
+  font-family: monospace;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.role-text {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.role-2 {
+  color: var(--accent-dim); /* Distinct color for middle role */
+  opacity: 0.8;
+}
+
+.role-3 {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-color);
+  opacity: 0.5;
+}
+
+.hero-desc {
+  margin-top: 2rem;
+  max-width: 500px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .role-text {
+    font-size: 3rem;
+  }
+}

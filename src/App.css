@@ -1,0 +1,26 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 80px; /* Width of desktop sidebar */
+  width: calc(100% - 80px);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px; /* Space for mobile toggle */
+  }
+}
+
+/* Global Section Styles override/additions if needed */
+section {
+  scroll-margin-top: 2rem;
+}

@@ -1,0 +1,170 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #0d1117;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: -30%; /* Center optically */
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--accent-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.social-icons a:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1100;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: none; /* Hidden on desktop */
+}
+
+/* Desktop Specifics */
+.sidebar-desktop {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background: #050505;
+  flex-direction: column;
+  justify-content: flex-start; /* Move logo and items to top */
+  padding: 1.5rem 0; /* Reduced top padding for logo */
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.logo {
+  margin-bottom: 4rem; /* Reduced from 8rem to save space */
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  font-family: 'serif';
+  margin: 0;
+}
+
+.nav-links-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem; /* Balanced spacing */
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center; /* Center links in the middle area */
+}
+
+.nav-item-desktop {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* Flip so text reads bottom to top */
+  transition: all 0.3s;
+  font-family: var(--font-main);
+  font-weight: 500;
+  display: block;
+}
+
+.nav-item-desktop:hover, .nav-item-desktop.active {
+  color: var(--accent-color);
+  letter-spacing: 5px; /* Slight expansion on hover for effect */
+}
+
+.social-icons-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: auto;
+  padding-bottom: 3rem; /* Ensure padding from bottom edge */
+}
+
+.social-icons-desktop a {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons-desktop a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+  .sidebar-desktop {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .sidebar {
+    width: 100%; /* Full screen menu on mobile */
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    display: none; /* Hide the mobile sidebar structure */
+  }
+  .sidebar-desktop {
+    display: flex;
+  }
+}
